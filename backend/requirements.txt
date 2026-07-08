@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-dotenv
+openai
+python-jose
+passlib[bcrypt]
+google-auth
+psycopg2-binary
+requests
+pytest
