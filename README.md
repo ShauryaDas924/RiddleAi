@@ -1,134 +1,39 @@
-# RiddleAI Frontend
+# Riddle AI
 
-React + Vite frontend for the RiddleAI application.
-
----
+Riddle AI is a beginner-friendly learning project for a student app that generates riddles, checks answers, remembers progress, and later saves user history with Supabase.
 
 ## Tech Stack
 
-- React
-- Vite
-- JavaScript (ES6+)
-- ESLint
-- npm
+- Frontend: React + Vite
+- Backend: Python + FastAPI
+- Database/Auth: Supabase
+- AI provider: OpenAI or a similar API later
 
----
+## App Flow
+
+React frontend -> FastAPI backend -> Supabase database/auth -> AI provider
+
+The backend is the brain of the app. The frontend should call the backend for riddle generation, answer checking, preferences, progress, and history.
 
 ## Project Structure
 
-```text
-frontend/my-react-app/
-├── public/
-├── src/
-├── .gitignore
-├── eslint.config.js
-├── index.html
-├── package.json
-├── package-lock.json
-├── README.md
-└── vite.config.js
-```
+- `frontend/my-react-app`: React pages, components, hooks, API helpers, styles, and frontend tests.
+- `backend`: FastAPI routes, services, schemas, prompts, sample data, and backend tests.
+- `database`: Supabase table planning, future migrations, and seed data.
+- `docs`: short planning notes for students.
 
----
+## How Students Should Use This
 
-## Prerequisites
+Start by opening the TODO-only files and filling them in one small feature at a time. Do not try to build the whole app at once.
 
-Before running the project, make sure you have:
+Good first files to read:
 
-- Node.js 18 or newer
-- npm (comes with Node.js)
+- `docs/student-build-order.md`
+- `frontend/my-react-app/src/pages/PlayPage.jsx`
+- `frontend/my-react-app/src/components/riddles/RiddleCard.jsx`
+- `backend/app/main.py`
+- `backend/app/routes/health_routes.py`
 
-Verify your installation:
+## Security Reminder
 
-```bash
-node -v
-npm -v
-```
-
----
-
-## Installation
-
-Clone the repository and install dependencies:
-
-```bash
-npm install
-```
-
----
-
-## Running the Development Server
-
-Start the local development server:
-
-```bash
-npm run dev
-```
-
-Vite will display a local URL similar to:
-
-```text
-http://localhost:5173
-```
-
----
-
-## Available Scripts
-
-### Start Development Server
-
-```bash
-npm run dev
-```
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
-### Run ESLint
-
-```bash
-npm run lint
-```
-
----
-
-## Environment Variables
-
-If the frontend communicates with a backend API, create a `.env` file in the project root.
-
-Example:
-
-```env
-VITE_API_URL=http://localhost:8000
-```
-
-> **Note:** Only environment variables prefixed with `VITE_` are accessible inside the React application.
-
----
-
-## Git
-
-The following should **not** be committed:
-
-- `.env`
-- `node_modules`
-- `dist`
-
-The following **should** be committed:
-
-- `package-lock.json`
-
----
-
-## License
-
-This project is licensed under the MIT License unless otherwise specified.
+Real `.env` files should stay private. The frontend may use public values like `VITE_SUPABASE_ANON_KEY` later, but `SUPABASE_SERVICE_ROLE_KEY` and `AI_API_KEY` must only be used by the backend.

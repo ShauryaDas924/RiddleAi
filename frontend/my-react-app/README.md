@@ -1,16 +1,21 @@
-# React + Vite
+# Riddle AI Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This folder is the React + Vite frontend for the Riddle AI learning app.
 
-Currently, two official plugins are available:
+## Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The frontend should show pages, render reusable components, collect student answers, and call the FastAPI backend. It should not hold secret keys or own the main riddle logic.
 
-## React Compiler
+## Main Folders
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/pages`: full pages such as home, play, settings, dashboard, login, and not found.
+- `src/components`: reusable UI pieces such as cards, buttons, riddle displays, and preference forms.
+- `src/api`: functions that will call the backend later.
+- `src/hooks`: reusable React state logic.
+- `src/styles`: shared CSS files.
+- `src/utils`: small helper files.
+- `src/tests`: frontend tests to add later.
 
-## Expanding the ESLint configuration
+## Security
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Only public browser-safe values belong in `VITE_` variables. Backend secrets do not belong in this folder.
