@@ -1,1 +1,25 @@
-TODO: Write the prompt for checking a student's answer.
+PURPOSE
+This file will eventually guide the AI provider when checking a student's answer.
+
+WHAT TO WRITE LATER
+Step 1: Explain that the AI should compare the student's answer to the correct answer.
+Step 2: Ask for friendly feedback.
+Step 3: Allow close answers when the meaning is correct.
+Step 4: Tell the AI when it may or may not reveal the correct answer.
+
+POSSIBLE VARIABLES LATER
+- riddle_question
+- correct_answer
+- student_answer
+- difficulty
+- attempt_number
+
+AVOID
+Do not make feedback harsh.
+Do not reveal the answer too early unless the app flow says to.
+Do not include private user data in the prompt.
+
+BEGINNER CHECKLIST
+[ ] Does the prompt focus on answer checking?
+[ ] Is the feedback student-friendly?
+[ ] Is the expected response format clear?

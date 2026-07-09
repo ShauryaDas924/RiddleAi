@@ -1,1 +1,41 @@
-/* TODO: Add global frontend styles here later. */
+/*
+  =========================================================
+  Purpose
+  =========================================================
+  This file will eventually hold global CSS for the whole frontend.
+  Global CSS affects the full app, so keep it broad and simple.
+
+  =========================================================
+  What to build later
+  =========================================================
+  Step 1: Add basic body styling.
+  Step 2: Add default font and background styles.
+  Step 3: Import or copy shared variables from styles/variables.css if needed.
+  Step 4: Keep component-specific styling near the component or in layout.css.
+
+  =========================================================
+  Data in and data out
+  =========================================================
+  Data in: Class names and HTML elements from React components.
+  Data out: Global visual rules applied by the browser.
+
+  =========================================================
+  Connects to
+  =========================================================
+  - src/main.jsx
+  - src/styles/variables.css
+  - src/styles/layout.css
+
+  =========================================================
+  Avoid
+  =========================================================
+  Do not put every component style here.
+  Do not make global styles so specific that they are hard to override.
+
+  =========================================================
+  Beginner checklist
+  =========================================================
+  [ ] Are global styles truly global?
+  [ ] Are colors and spacing consistent?
+  [ ] Are page-specific styles kept out of this file when possible?
+*/

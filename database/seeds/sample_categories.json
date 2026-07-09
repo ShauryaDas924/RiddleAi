@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "logic",
+    "name": "Logic",
+    "description": "Placeholder category for reasoning riddles."
+  },
+  {
+    "id": "wordplay",
+    "name": "Wordplay",
+    "description": "Placeholder category for language riddles."
+  }
+]

@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": "sample-riddle-1",
+    "question": "Placeholder riddle question for students to replace later.",
+    "answer": "placeholder answer",
+    "category": "logic",
+    "difficulty": "easy"
+  }
+]

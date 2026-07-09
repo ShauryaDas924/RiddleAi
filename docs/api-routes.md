@@ -1,11 +1,22 @@
 # API Routes
 
-Planned backend routes:
+This file plans backend routes before students write them.
 
-- Health route: check that the backend is running.
-- Riddle routes: get a riddle and request a new one.
-- Answer routes: check a student's answer.
-- User routes: read or update simple user preferences.
-- Auth routes: prepare for login/signup later.
+## Planned Routes
 
-Keep route files small. Put app decisions in service files.
+- Health route: confirms the backend is running.
+- Riddle route: returns a new riddle.
+- Answer route: checks a student's answer.
+- User route: loads and saves preferences.
+- Progress route: returns dashboard stats later.
+- Auth route: prepares login/signup later.
+
+## Teaching Note
+
+Routes should stay small. They should receive requests, validate data, call service files, and return responses.
+
+## Avoid
+
+- Do not put all AI logic in route files.
+- Do not put database queries in every route file.
+- Do not expose private keys in responses.

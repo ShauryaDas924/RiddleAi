@@ -1,1 +1,41 @@
-/* TODO: Add reusable layout styles here later. */
+/*
+  =========================================================
+  Purpose
+  =========================================================
+  This file will eventually hold reusable layout CSS.
+  Layout CSS helps pages share spacing, containers, and grids.
+
+  =========================================================
+  What to build later
+  =========================================================
+  Step 1: Add a main page container class.
+  Step 2: Add simple stack or row helper classes if useful.
+  Step 3: Add responsive layout rules after the desktop layout is clear.
+  Step 4: Keep component-specific details in component styles later.
+
+  =========================================================
+  Data in and data out
+  =========================================================
+  Data in: Class names used by page and layout components.
+  Data out: Consistent spacing and layout in the browser.
+
+  =========================================================
+  Connects to
+  =========================================================
+  - src/components/layout/PageLayout.jsx
+  - src/pages/*
+  - src/styles/variables.css
+
+  =========================================================
+  Avoid
+  =========================================================
+  Do not put every visual detail here.
+  Do not make layout helpers hard to understand.
+
+  =========================================================
+  Beginner checklist
+  =========================================================
+  [ ] Are page layouts consistent?
+  [ ] Are helpers named clearly?
+  [ ] Does this file stay focused on layout?
+*/

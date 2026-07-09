@@ -1,1 +1,41 @@
-/* TODO: Add shared colors, spacing, and font variables here later. */
+/*
+  =========================================================
+  Purpose
+  =========================================================
+  This file will eventually hold shared design values.
+  Examples include colors, spacing, border radius, and font choices.
+
+  =========================================================
+  What to build later
+  =========================================================
+  Step 1: Choose a small set of app colors.
+  Step 2: Add spacing values used across pages.
+  Step 3: Add reusable sizing or radius values.
+  Step 4: Keep the list short so beginners can understand it.
+
+  =========================================================
+  Data in and data out
+  =========================================================
+  Data in: Design choices for the app.
+  Data out: CSS variables used by other style files.
+
+  =========================================================
+  Connects to
+  =========================================================
+  - src/index.css
+  - src/styles/layout.css
+  - Component class names later
+
+  =========================================================
+  Avoid
+  =========================================================
+  Do not create dozens of variables before they are needed.
+  Do not use secret or environment values in CSS.
+
+  =========================================================
+  Beginner checklist
+  =========================================================
+  [ ] Are variable names easy to understand?
+  [ ] Are there only a few colors at first?
+  [ ] Are values reused instead of copied everywhere?
+*/

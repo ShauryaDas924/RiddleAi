@@ -1,1 +1,24 @@
-TODO: Write the prompt for generating student-friendly riddles.
+PURPOSE
+This file will eventually guide the AI provider when generating a new riddle.
+
+WHAT TO WRITE LATER
+Step 1: Explain that the AI should create one student-friendly riddle.
+Step 2: Include placeholders for difficulty, category, and previous riddles.
+Step 3: Tell the AI to avoid repeating riddles the user has already seen.
+Step 4: Describe the output format the backend expects later.
+
+POSSIBLE VARIABLES LATER
+- difficulty
+- category
+- previous_riddles
+- student_age_or_level
+
+AVOID
+Do not write a final production prompt yet.
+Do not include API keys or secrets in prompt files.
+Do not ask for huge output when the backend only needs one riddle.
+
+BEGINNER CHECKLIST
+[ ] Does the prompt ask for one clear riddle?
+[ ] Does it mention difficulty and category?
+[ ] Does it explain the expected output format?

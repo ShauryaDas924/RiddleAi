@@ -1,1 +1,24 @@
-TODO: Write the general AI safety and behavior rules for this app.
+PURPOSE
+This file will eventually describe general AI behavior rules for Riddle AI.
+
+WHAT TO WRITE LATER
+Step 1: Explain that riddles should be safe and student-friendly.
+Step 2: Ask the AI to avoid inappropriate topics.
+Step 3: Ask the AI to keep explanations clear and age-appropriate.
+Step 4: Add formatting rules that make backend parsing easier later.
+
+POSSIBLE VARIABLES LATER
+- app_name
+- student_level
+- allowed_categories
+- blocked_topics
+
+AVOID
+Do not include secrets.
+Do not make the system rules so long that they are hard to maintain.
+Do not add rules that conflict with the riddle generation prompt.
+
+BEGINNER CHECKLIST
+[ ] Are the AI rules safe for students?
+[ ] Are the rules easy to understand?
+[ ] Do the rules support the app's learning goal?
