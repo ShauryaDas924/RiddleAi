@@ -1,39 +1,63 @@
-# Riddle AI
+# RiddleAi
 
-Riddle AI is a beginner-friendly learning project for a student app that generates riddles, checks answers, remembers progress, and later saves user history with Supabase.
+RiddleAi is a beginner-friendly full-stack learning project where students build an AI-powered riddle app from an empty starter structure.
+
+The goal of this project is not to give students a finished app.  
+The goal is to give them a clean project tree where they can learn how a real React + Python + Supabase app is organized and then fill in each file themselves.
+
+---
+
+## Project Idea
+
+RiddleAi will eventually let users:
+
+- Get AI-generated riddles
+- Submit answers
+- Check whether their answers are correct
+- Choose riddle difficulty
+- Choose riddle categories
+- Save user preferences
+- Track solved, failed, and skipped riddles
+- Avoid seeing the same riddles repeatedly
+- View progress over time
+
+---
 
 ## Tech Stack
 
-- Frontend: React + Vite
-- Backend: Python + FastAPI
-- Database/Auth: Supabase
-- AI provider: OpenAI or a similar API later
+### Frontend
 
-## App Flow
+- React
+- Vite
+- JavaScript / JSX
+- CSS
 
-React frontend -> FastAPI backend -> Supabase database/auth -> AI provider
+### Backend
 
-The backend is the brain of the app. The frontend should call the backend for riddle generation, answer checking, preferences, progress, and history.
+- Python
+- FastAPI
 
-## Project Structure
+### Database and Auth
 
-- `frontend/my-react-app`: React pages, components, hooks, API helpers, styles, and frontend tests.
-- `backend`: FastAPI routes, services, schemas, prompts, sample data, and backend tests.
-- `database`: Supabase table planning, future migrations, and seed data.
-- `docs`: short planning notes for students.
+- Supabase
+- PostgreSQL through Supabase
+- Supabase Auth later
 
-## How Students Should Use This
+### AI
 
-Start by opening the TODO-only files and filling them in one small feature at a time. Do not try to build the whole app at once.
+- OpenAI or another AI provider later
 
-Good first files to read:
+---
 
-- `docs/student-build-order.md`
-- `frontend/my-react-app/src/pages/PlayPage.jsx`
-- `frontend/my-react-app/src/components/riddles/RiddleCard.jsx`
-- `backend/app/main.py`
-- `backend/app/routes/health_routes.py`
+## App Architecture
 
-## Security Reminder
+The planned architecture is:
 
-Real `.env` files should stay private. The frontend may use public values like `VITE_SUPABASE_ANON_KEY` later, but `SUPABASE_SERVICE_ROLE_KEY` and `AI_API_KEY` must only be used by the backend.
+```txt
+React frontend
+    ↓
+FastAPI backend
+    ↓
+Supabase database/auth
+    ↓
+AI provider
