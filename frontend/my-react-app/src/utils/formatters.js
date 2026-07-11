@@ -1,37 +1,43 @@
-// =========================================================
-// Purpose
-// =========================================================
-// This file will eventually hold small formatting helpers.
-// Formatting helpers make data nicer to display.
-//
-// =========================================================
-// What to build later
-// =========================================================
-// Step 1: Add helpers for dates, scores, or labels only when needed.
-// Step 2: Keep each helper small.
-// Step 3: Use helpers from pages or components to avoid repeated formatting.
-//
-// =========================================================
-// Data in and data out
-// =========================================================
-// Data in: Raw values such as dates, numbers, or labels.
-// Data out: Display-friendly strings.
-//
-// =========================================================
-// Connects to
-// =========================================================
-// - src/pages/DashboardPage.jsx
-// - src/components/user/ProgressSummary.jsx
-//
-// =========================================================
-// Avoid
-// =========================================================
-// Do not put API calls here.
-// Do not put validation rules here if validators.js is a better home.
-//
-// =========================================================
-// Beginner checklist
-// =========================================================
-// [ ] Does each helper only format data?
-// [ ] Is repeated display formatting removed from components?
-// [ ] Are helper names easy to read?
+
+export const formatScore = (score) => {
+  if (score === null || score === undefined) return '0';
+  return Number(score).toLocaleString();
+};
+
+/**
+ * Formats a standard ISO timestamp or Date object into a readable date string.
+ * Example: "2026-07-11T18:47:00Z" -> "July 11, 2026"
+ */
+export const formatDate = (dateString) => {
+  if (!dateString) return '---';
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return 'Invalid Date';
+  
+  return date.toLocaleDateString(undefined, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
+
+/**
+ * Capitalizes text strings for clean status badge headers or UI tags.
+ * Example: "game_over" or "GAME_OVER" -> "Game Over"
+ */
+export const formatLabel = (slug) => {
+  if (!slug) return '';
+  return slug
+    .toLowerCase()
+    .split(/[_\-\s]+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
+
+/**
+ * Pads numbers for countdown timers or formal scoreboards.
+ * Example: 7 -> "07"
+ */
+export const formatTwoDigits = (number) => {
+  if (number === null || number === undefined) return '00';
+  return String(number).padStart(2, '0');
+};

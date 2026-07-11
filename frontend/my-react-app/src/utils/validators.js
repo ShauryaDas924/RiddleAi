@@ -1,39 +1,48 @@
-// =========================================================
-// Purpose
-// =========================================================
-// This file will eventually hold simple frontend validation helpers.
-// Validation helps catch basic mistakes before sending data to the backend.
-//
-// =========================================================
-// What to build later
-// =========================================================
-// Step 1: Add a helper for checking empty answers.
-// Step 2: Add helpers for simple form fields later.
-// Step 3: Keep validation messages friendly and clear.
-// Step 4: Remember that backend validation is still required.
-//
-// =========================================================
-// Data in and data out
-// =========================================================
-// Data in: User input from forms.
-// Data out: Valid or invalid status and helpful messages later.
-//
-// =========================================================
-// Connects to
-// =========================================================
-// - src/components/riddles/AnswerInput.jsx
-// - src/components/user/PreferenceForm.jsx
-// - backend/app/schemas/*
-//
-// =========================================================
-// Avoid
-// =========================================================
-// Do not trust frontend validation as the only protection.
-// Do not put backend database rules here.
-//
-// =========================================================
-// Beginner checklist
-// =========================================================
-// [ ] Are validation messages understandable?
-// [ ] Does the backend still validate important data?
-// [ ] Are helpers small and reusable?
+/**
+ * Step 1: Validates that a riddle submission is not empty or pure spaces.
+ */
+export const validateAnswer = (answer) => {
+  if (!answer || answer.trim().length === 0) {
+    return {
+      isValid: false,
+      message: "Your answer can't be empty! Give it your best guess."
+    };
+  }
+  return { isValid: true, message: "" };
+};
+
+/**
+ * Step 2: Validates display names / usernames for leaderboard or profile setups.
+ */
+export const validateUsername = (username) => {
+  if (!username || username.trim().length === 0) {
+    return {
+      isValid: false,
+      message: "Please enter a nickname before playing."
+    };
+  }
+  
+  const cleanUsername = username.trim();
+  if (cleanUsername.length < 3 || cleanUsername.length > 15) {
+    return {
+      isValid: false,
+      message: "Your nickname must be between 3 and 15 characters long."
+    };
+  }
+  
+  return { isValid: true, message: "" };
+};
+
+/**
+ * Step 2 (Continued): Validates custom slider settings or game numeric preferences.
+ */
+export const validateRiddleCountPreference = (count) => {
+  const num = Number(count);
+  if (isNaN(num) || num < 1 || num > 20) {
+    return {
+      isValid: false,
+      message: "You can set your round preference between 1 and 20 riddles at a time."
+    };
+  }
+  return { isValid: true, message: "" };
+};
