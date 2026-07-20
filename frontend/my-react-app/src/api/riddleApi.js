@@ -1,16 +1,18 @@
+import { apiRequest } from './backendApi';
+
 // =========================================================
 // Purpose
 // =========================================================
-// This file will eventually hold frontend API functions for riddles.
-// Pages and hooks can use this file instead of writing request logic directly.
+// This file holds frontend API functions for riddles.
+// Pages and hooks use this file instead of writing request logic directly.
 //
 // =========================================================
-// What to build later
+// What was built
 // =========================================================
-// Step 1: Add a function to request a new riddle from the backend.
-// Step 2: Add a function to submit an answer for checking.
-// Step 3: Add a function to skip or mark a riddle if needed.
-// Step 4: Use backendApi.js for the actual request helper.
+// Step 1: Added fetchRiddle to request a new riddle with query parameters.
+// Step 2: Added verifyAnswer to submit user input for backend checking.
+// Step 3: Added skipRiddle to notify the backend when a riddle is skipped.
+// Step 4: Routed all requests through the shared apiRequest helper in backendApi.js.
 //
 // =========================================================
 // Data in and data out
@@ -34,6 +36,51 @@
 // =========================================================
 // Beginner checklist
 // =========================================================
-// [ ] Are riddle requests kept in this file?
-// [ ] Does this file call the backend instead of doing backend work?
-// [ ] Is the data shape easy for PlayPage to use?
+// [x] Are riddle requests kept in this file?
+// [x] Does this file call the backend instead of doing backend work?
+// [x] Is the data shape easy for PlayPage to use?
+
+/**
+ * Step 1: Request a new riddle from the backend based on optional filters.
+ * @param {Object} params - Options for difficulty and category
+ * @param {string} params.difficulty - Desired difficulty level
+ * @param {string} params.category - Desired riddle category
+ */
+export async function fetchRiddle({ difficulty, category } = {}) {
+  const queryParams = new URLSearchParams();
+  if (difficulty) queryParams.append('difficulty', difficulty);
+  if (category) queryParams.append('category', category);
+
+  const queryString = queryParams.toString();
+  const endpoint = `/api/riddles/next${queryString ? `?${queryString}` : ''}`;
+
+  return await apiRequest(endpoint, {
+    method: 'GET',
+  });
+}
+
+/**
+ * Step 2: Submit a student's answer to the backend for evaluation.
+ * @param {Object} payload - Answer payload containing riddleId and answer text
+ * @param {string|number} payload.riddleId - Unique identifier of the riddle
+ * @param {string} payload.answer - Student's attempt
+ */
+export async function verifyAnswer({ riddleId, answer }) {
+  return await apiRequest('/api/riddles/check', {
+    method: 'POST',
+    body: {
+      riddle_id: riddleId,
+      user_answer: answer,
+    },
+  });
+}
+
+/**
+ * Step 3: Mark or skip a riddle when requested by the student.
+ * @param {string|number} riddleId - ID of the riddle being skipped
+ */
+export async function skipRiddle(riddleId) {
+  return await apiRequest(`/api/riddles/${riddleId}/skip`, {
+    method: 'POST',
+  });
+}
