@@ -1,16 +1,18 @@
+import Navbar from './Navbar';
+
 // =========================================================
 // Purpose
 // =========================================================
-// This file will eventually contain a shared page layout wrapper.
-// It can keep spacing, navigation, and page width consistent.
+// This file contains a shared page layout wrapper.
+// It keeps spacing, navigation, and page width consistent.
 //
 // =========================================================
-// What to build later
+// What was built
 // =========================================================
-// Step 1: Decide what every page should share.
-// Step 2: Add Navbar if it should appear on most pages.
-// Step 3: Add a main content area.
-// Step 4: Let each page provide its own content.
+// Step 1: Defined shared container structure with consistent max-width and padding.
+// Step 2: Integrated the top Navbar header navigation component.
+// Step 3: Created a flexbox main content area that expands gracefully.
+// Step 4: Rendered dynamic children components passed from individual pages.
 //
 // =========================================================
 // Data in and data out
@@ -34,6 +36,59 @@
 // =========================================================
 // Beginner checklist
 // =========================================================
-// [ ] Does this file handle layout only?
-// [ ] Can pages stay focused on their own content?
-// [ ] Is repeated page structure removed from individual pages?
+// [x] Does this file handle layout only?
+// [x] Can pages stay focused on their own content?
+// [x] Is repeated page structure removed from individual pages?
+
+export default function PageLayout({
+  children,
+  showNavbar = true,
+  maxWidth = '1200px',
+  style = {},
+  ...props
+}) {
+  const containerStyle = {
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: '#f9fafb',
+    fontFamily: 'system-ui, -apple-system, sans-serif',
+    color: '#111827',
+  };
+
+  const mainStyle = {
+    flex: '1 0 auto',
+    width: '100%',
+    maxWidth: maxWidth,
+    margin: '0 auto',
+    padding: '24px 16px',
+    boxSizing: 'border-box',
+    ...style,
+  };
+
+  const footerStyle = {
+    padding: '16px',
+    textAlign: 'center',
+    fontSize: '14px',
+    color: '#6b7280',
+    borderTop: '1px solid #e5e7eb',
+    backgroundColor: '#ffffff',
+  };
+
+  return (
+    <div style={containerStyle} {...props}>
+      {/* Step 2: Top Navigation */}
+      {showNavbar && <Navbar />}
+
+      {/* Step 3 & 4: Main Page Shell */}
+      <main style={mainStyle}>
+        {children}
+      </main>
+
+      {/* Shared Footer */}
+      <footer style={footerStyle}>
+        <p style={{ margin: 0 }}>© {new Date().getFullYear()} Riddle AI Learning App</p>
+      </footer>
+    </div>
+  );
+}
