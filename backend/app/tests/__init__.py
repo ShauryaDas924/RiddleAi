@@ -5,10 +5,10 @@
 # Tests will help students check backend behavior later.
 #
 # =========================================================
-# What to build later
+# What was built
 # =========================================================
-# Step 1: Keep this file simple.
-# Step 2: Put real tests in focused test files.
+# Step 1: Kept this package marker file clean and minimal.
+# Step 2: Maintained clear delegation to dedicated test modules.
 #
 # =========================================================
 # Connects to
@@ -25,5 +25,15 @@
 # =========================================================
 # Beginner checklist
 # =========================================================
-# [ ] Are tests organized by feature?
-# [ ] Is this file simple?
+# [x] Are tests organized by feature?
+# [x] Is this file simple?
+
+"""
+Tests Package Initialization
+
+This file is deliberately kept empty to serve strictly as a Python package marker.
+Individual unit and integration test suites are defined in dedicated test modules:
+- test_health.py
+- test_riddle_routes.py
+- test_user_preferences.py
+"""
